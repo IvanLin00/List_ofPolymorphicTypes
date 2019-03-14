@@ -25,11 +25,15 @@ public class List_inArraySlots{
 		return true;
 	}
 	
-	//public void expand(){
-		
-	//}
+	public void expand(){
+		Object[] biggerList = new Object[listOfObjects.length * 2];
+		for (int index = 0; index < listOfObjects.length - 1; index ++){
+			biggerList[index] = listOfObjects[index];
+		}
+		listOfObjects = biggerList;
+	}
 	
-	//public Object get(int index){
-	
-	//}
+	public Object get(int index){
+		return listOfObjects[index];
+	}
 }
