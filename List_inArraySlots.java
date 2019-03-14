@@ -5,7 +5,7 @@ public class List_inArraySlots{
 	
 	public List_inArraySlots(){
 		listOfObjects = new Object[INITIAL_CAPACITY];
-		filledElements=0;
+		filledElements= 0;
 	}
 	
 	public int size(){
@@ -13,11 +13,14 @@ public class List_inArraySlots{
 	}
 	
 	public String toString(){
-		return listOfObjects.toString();
+		String s = "[";
+		if (filledElements == 0) return "[]";
+		for (int i = 0 ; i < filledElements - 1; i++) s += listOfObjects[i] + ", ";
+		return s + listOfObjects[filledElements - 1] + "]";
 	}
 	
 	public boolean add( int type ,int intValue,double doubleValue,String stringValue){
-		//if (filledElements > listOfObjects.length) expand();
+		if (filledElements > listOfObjects.length - 1) expand();
 		if (type == 1) listOfObjects[filledElements] = doubleValue;
 		if (type == 0) listOfObjects[filledElements] = intValue;
 		if (type == 2) listOfObjects[filledElements] = stringValue;
@@ -27,9 +30,7 @@ public class List_inArraySlots{
 	
 	public void expand(){
 		Object[] biggerList = new Object[listOfObjects.length * 2];
-		for (int index = 0; index < listOfObjects.length - 1; index ++){
-			biggerList[index] = listOfObjects[index];
-		}
+		for (int index = 0; index < listOfObjects.length; index ++) biggerList[index] = listOfObjects[index];
 		listOfObjects = biggerList;
 	}
 	
