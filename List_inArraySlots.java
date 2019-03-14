@@ -13,23 +13,23 @@ public class List_inArraySlots{
 	}
 	
 	public String toString(){
-		return listOfObjects;
+		return listOfObjects.toString();
 	}
 	
 	public boolean add( int type ,int intValue,double doubleValue,String stringValue){
-		if (filledElements > listOfObjects.length) expand();
-		if (type == 0) listOfObjects[filledElements] = new Integer[intValue];
-		if (type == 1) listOfObjects[filledElements] = new Double[doubleValue];
-		if (type == 2) listOfObjects[filledElements] = new String[stringValue];
+		//if (filledElements > listOfObjects.length) expand();
+		if (type == 1) listOfObjects[filledElements] = doubleValue;
+		if (type == 0) listOfObjects[filledElements] = intValue;
+		if (type == 2) listOfObjects[filledElements] = stringValue;
 		filledElements++;
 		return true;
 	}
 	
-	public void expand(){
+	//public void expand(){
 		
-	}
+	//}
 	
-	public Object get(int index){
+	//public Object get(int index){
 	
-	}
+	//}
 }
